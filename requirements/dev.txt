@@ -1,0 +1,6 @@
+-r base.txt
+
+coverage==3.6
+django-coverage==1.2.2
+django-jenkins==0.14.0
+factory-boy==1.2.0

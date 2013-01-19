@@ -33,10 +33,10 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
-# Template stuff   
+# Template stuff
 TEMPLATE_LOADERS = [
     "django.template.loaders.filesystem.Loader",
-    "django.template.loaders.app_directories.Loader",    
+    "django.template.loaders.app_directories.Loader",
 ]
 
 TEMPLATE_CONTEXT_PROCESSORS = [
@@ -74,10 +74,21 @@ LOGGING = {
     },
 }
 
-INSTALLED_APPS = [
-    "django.contrib.sessions",
-    "django.contrib.staticfiles",
-    "django.contrib.messages",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
+PREREQ_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.humanize',
+    'django.contrib.markup',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.staticfiles',
+    'django_coverage',
+    'django_jenkins',
+    'gunicorn',
+    'south',
 ]
+
+PROJECT_APPS = []
+
+INSTALLED_APPS = PREREQ_APPS + PROJECT_APPS
